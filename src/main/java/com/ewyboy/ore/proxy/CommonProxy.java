@@ -2,16 +2,16 @@ package com.ewyboy.ore.proxy;
 
 import com.ewyboy.ore.ORE;
 import com.ewyboy.ore.common.config.Config;
+import com.ewyboy.ore.common.world.WorldGenInit;
 
 import java.io.File;
 
 /** Created by EwyBoy **/
 public abstract class CommonProxy implements IProxy {
 
-
     @Override
     public void registerWorldGen() {
-
+        WorldGenInit.init();
     }
 
     @Override
@@ -20,7 +20,5 @@ public abstract class CommonProxy implements IProxy {
     }
 
     @Override
-    public void registerEvents() {
-        //WorldGenInit.init();
-    }
+    public void registerEvents() {}
 }

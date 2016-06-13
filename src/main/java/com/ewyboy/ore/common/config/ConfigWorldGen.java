@@ -7,7 +7,9 @@ import net.minecraftforge.common.config.Configuration;
 import java.util.HashMap;
 import java.util.Map;
 
-/** Created by EwyBoy **/
+/**
+ *  This generates the entire worldgen part of the config file
+ **/
 public class ConfigWorldGen {
 
     public static final Map<EnumVanillaWorldGen, OreConfig> OreWorldGen = new HashMap<>(EnumVanillaWorldGen.values().length);
