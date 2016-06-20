@@ -1,6 +1,6 @@
 package com.ewyboy.ore.common.config;
 
-import com.ewyboy.ore.common.enums.EnumVanillaWorldGen;
+import com.ewyboy.ore.common.enums.EnumWorldGen;
 import com.ewyboy.ore.common.utility.helpers.ConfigHelper;
 import net.minecraftforge.common.config.Configuration;
 
@@ -12,13 +12,13 @@ import java.util.Map;
  **/
 public class ConfigWorldGen {
 
-    public static final Map<EnumVanillaWorldGen, OreConfig> OreWorldGen = new HashMap<>(EnumVanillaWorldGen.values().length);
-    private static final Map<EnumVanillaWorldGen, OreConfig> OreWorldGenDefaults = new HashMap<>(EnumVanillaWorldGen.values().length);
+    public static final Map<EnumWorldGen, OreConfig> OreWorldGen = new HashMap<>(EnumWorldGen.values().length);
+    private static final Map<EnumWorldGen, OreConfig> OreWorldGenDefaults = new HashMap<>(EnumWorldGen.values().length);
     private static final int[] DEFAULT_DIMENSION_BLACKLIST = {-1, 1};
 
     //TODO: Add proper values here
     static {
-        for (EnumVanillaWorldGen ore : EnumVanillaWorldGen.values()) {
+        for (EnumWorldGen ore : EnumWorldGen.values()) {
             OreConfig defaultConfig = new OreConfig();
             defaultConfig.Enabled = true;
             defaultConfig.DimensionRestriction = RestrictionType.Blacklist;
@@ -130,7 +130,7 @@ public class ConfigWorldGen {
         final String DESC_DIM_RESTRICTION = "Either 'blacklist' or 'whitelist'";
         final String DESC_DIM_LIST = "Dimension numbers for restriction";
 
-        for (EnumVanillaWorldGen ore : EnumVanillaWorldGen.values()) {
+        for (EnumWorldGen ore : EnumWorldGen.values()) {
             String oreName = ore.name();
             String oreLower = oreName.toLowerCase();
             String category = String.format("%s.%s", WORLDGEN_ORES, oreName);
